@@ -1,0 +1,5 @@
+2026-11-16 20:18:46,100 - INFO - paper_dao.py:16 - 新增论文成功，ID: 6, 标题: 测试论文
+2026-11-16 20:18:46,101 - INFO - decorators.py:12 - 函数 add_paper 执行完成，耗时: 0.1201 秒
+2026-11-16 20:18:46,153 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.0515 秒
+2026-11-16 20:18:46,201 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.0486 秒
+2026-11-16 20:18:46,255 - INFO - paper_dao.py:75 - 删除论文ID: 6，受影响行数: 1

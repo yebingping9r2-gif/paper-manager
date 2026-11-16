@@ -1,0 +1,28 @@
+2026-11-13 11:33:00,550 - INFO - logger.py:37 - 日志配置测试成功
+2026-11-13 11:33:00,550 - DEBUG - logger.py:38 - 调试信息
+2026-11-13 11:33:00,551 - ERROR - logger.py:39 - 错误信息测试
+2026-11-13 12:17:30,720 - INFO - paper_dao.py:14 - 新增论文成功，ID: 1, 标题: 大模型RAG技术研究
+2026-11-13 12:20:49,524 - INFO - paper_dao.py:14 - 新增论文成功，ID: 2, 标题: 大模型RAG技术研究
+2026-11-13 12:20:50,151 - INFO - paper_dao.py:63 - 更新论文ID: 2，受影响行数: 1
+2026-11-13 12:20:50,566 - INFO - paper_dao.py:71 - 删除论文ID: 2，受影响行数: 1
+2026-11-13 12:24:42,508 - INFO - paper_dao.py:16 - 新增论文成功，ID: 3, 标题: 大模型RAG技术研究
+2026-11-13 12:24:42,509 - INFO - decorators.py:12 - 函数 add_paper 执行完成，耗时: 0.1093 秒
+2026-11-13 12:24:42,601 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.0920 秒
+2026-11-13 12:24:42,691 - INFO - decorators.py:12 - 函数 list_papers 执行完成，耗时: 0.0888 秒
+2026-11-13 12:24:42,891 - INFO - decorators.py:12 - 函数 list_papers 执行完成，耗时: 0.2002 秒
+2026-11-13 12:24:42,981 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.0896 秒
+2026-11-13 12:24:43,073 - INFO - paper_dao.py:67 - 更新论文ID: 3，受影响行数: 1
+2026-11-13 12:24:43,267 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.1933 秒
+2026-11-13 12:24:43,355 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.0875 秒
+2026-11-13 12:24:43,449 - INFO - paper_dao.py:75 - 删除论文ID: 3，受影响行数: 1
+2026-11-13 22:46:10,922 - INFO - paper_dao.py:16 - 新增论文成功，ID: 4, 标题: 测试论文
+2026-11-13 22:46:10,923 - INFO - decorators.py:12 - 函数 add_paper 执行完成，耗时: 0.2019 秒
+2026-11-13 22:46:11,027 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.1031 秒
+2026-11-13 22:46:11,228 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.2012 秒
+2026-11-13 22:46:11,327 - INFO - paper_dao.py:75 - 删除论文ID: 4，受影响行数: 1
+2026-11-13 22:47:29,294 - INFO - main.py:18 - 论文管理系统启动
+2026-11-13 22:47:54,620 - INFO - paper_dao.py:16 - 新增论文成功，ID: 5, 标题: 你好
+2026-11-13 22:47:54,620 - INFO - decorators.py:12 - 函数 add_paper 执行完成，耗时: 0.1173 秒
+2026-11-13 22:48:24,170 - INFO - decorators.py:12 - 函数 get_paper_by_id 执行完成，耗时: 0.0944 秒
+2026-11-13 22:51:05,396 - INFO - main.py:72 - 系统退出
+2026-11-13 22:51:05,396 - INFO - decorators.py:12 - 函数 main 执行完成，耗时: 216.1020 秒
