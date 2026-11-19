@@ -74,3 +74,19 @@ def delete_paper(conn,paper_id: int) -> bool:
     rows = execute_query(conn,sql, (paper_id,), fetch=False)
     logger.info(f"删除论文ID: {paper_id}，受影响行数: {rows}")
     return rows > 0
+
+def add_paper_with_file(conn, title: str, file_name: str, file_path: str,
+                        author: str = None, publish_year: int = None, abstract: str = None):
+    """
+    上传PDF时新增论文，附带文件名和文件路径
+    """
+    sql = """
+        INSERT INTO papers (title, author, publish_year, abstract, file_name, file_path)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        RETURNING id;
+    """
+    params = (title, author, publish_year, abstract, file_name, file_path)
+    result = execute_query(conn, sql, params, fetch=True, commit=True)
+    paper_id = result[0]['id']
+    logger.info(f"上传论文成功，ID: {paper_id}, 文件名: {file_name}")
+    return paper_id

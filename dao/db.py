@@ -14,23 +14,38 @@ def get_db_connection():
         logger.error(f"数据库连接失败: {str(e)}")
         raise DatabaseError(f"连接失败: {str(e)}")
 
-def execute_query(conn, sql: str, params: tuple = None, fetch: bool = True):
+def execute_query(conn, sql: str, params: tuple = None, fetch: bool = True, commit: bool = None):
     """
-    通用SQL执行工具（接收外部传入的连接）
+    通用SQL执行工具
     :param conn: 外部注入的数据库连接
+    :param sql: SQL语句
+    :param params: 参数元组
+    :param fetch: 是否提取返回结果
+    :param commit: 是否强制提交事务；为None时自动判断：fetch=False默认提交
     """
     cursor = None
     try:
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute(sql, params)
-        
+
+        # 自动判断是否需要提交
+        if commit is None:
+            commit = not fetch
+
+        # 提取结果
+        result = None
         if fetch:
             result = cursor.fetchall()
-            return [dict(row) for row in result]
+            result = [dict(row) for row in result]
         else:
+            result = cursor.rowcount
+
+        # 提交事务
+        if commit:
             conn.commit()
-            return cursor.rowcount
-            
+
+        return result
+
     except Exception as e:
         conn.rollback()
         logger.error(f"SQL执行失败: {sql}, 参数: {params}, 错误: {str(e)}")
@@ -38,6 +53,7 @@ def execute_query(conn, sql: str, params: tuple = None, fetch: bool = True):
     finally:
         if cursor:
             cursor.close()
+
 # ========== 新增：数据库连接依赖项 ==========
 def get_db() -> Generator:
     """
