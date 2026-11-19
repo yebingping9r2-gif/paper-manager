@@ -5,7 +5,7 @@ from config.logger import logger
 from utils.exceptions import PaperManagerError
 from fastapi.middleware.cors import CORSMiddleware
 from utils.response import error_response
-
+from routers.ai import router as ai_router
 # 导入路由模块
 from routers.paper import router as paper_router
 
@@ -24,7 +24,7 @@ app.add_middleware(
 )
 # 注册路由模块
 app.include_router(paper_router)
-
+app.include_router(ai_router)
 # 健康检查接口
 @app.get("/", summary="健康检查", tags=["系统"])
 def hello():
